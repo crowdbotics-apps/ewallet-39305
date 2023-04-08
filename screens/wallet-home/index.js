@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 const walletHomeScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <ScrollView>
       <View style={styles.header}>
@@ -24,18 +27,24 @@ const walletHomeScreen = () => {
         </View>
         <View style={styles.tabSection}>
             <View>
-              <Text style={styles.heading}>Coin</Text>
-              <Text style={styles.subHeading}>$232.99</Text>
+              <Pressable onPress={() => {
+              navigation.navigate("myWallet");
+            }}><Text style={styles.heading}>My Wallet</Text></Pressable>
+              
             </View>
             <View style={styles.border}></View>
             <View>
-              <Text style={styles.heading}>Cash</Text>
-              <Text style={styles.subHeading}>$432.90</Text>
+              <Pressable onPress={() => {
+              navigation.navigate("walletAddNew");
+            }}><Text style={styles.heading}>Add Wallet</Text></Pressable>
+              
             </View>
             <View style={styles.border}></View>
             <View>
-              <Text style={styles.heading}>Staked Coins</Text>
-              <Text style={styles.subHeading}>$150.00</Text>
+              <Pressable onPress={() => {
+              navigation.navigate("profile");
+            }}><Text style={styles.heading}>Profile</Text></Pressable>
+              
             </View>
         </View>
       </View>

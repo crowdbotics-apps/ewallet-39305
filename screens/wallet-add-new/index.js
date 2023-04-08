@@ -33,9 +33,7 @@ const WalletAddNewScreen = () => {
             <Image source={require("./assets/edit.png")} />
           </View>
           <View>
-            <Text style={styles.balanceText}>
-              $4552.68
-            </Text>
+            <Text style={styles.balanceText}>$4552.68</Text>
             <Text style={styles.balanceContent}>Balance</Text>
           </View>
         </View>
@@ -45,9 +43,7 @@ const WalletAddNewScreen = () => {
               <Text>Wallet</Text>
             </View>
             <View>
-              <Text>
-                Walletconnect.org
-              </Text>
+              <Text>Walletconnect.org</Text>
             </View>
           </View>
           <View style={styles.separator}></View>
@@ -56,9 +52,7 @@ const WalletAddNewScreen = () => {
               <Text>Status</Text>
             </View>
             <View>
-              <Text style={styles.onlineText}>
-                Online
-              </Text>
+              <Text style={styles.onlineText}>Online</Text>
             </View>
           </View>
           <View style={styles.separator}></View>
@@ -67,9 +61,7 @@ const WalletAddNewScreen = () => {
               <Text>Connect to</Text>
             </View>
             <View>
-              <Text>
-                app.address.org
-              </Text>
+              <Text>app.address.org</Text>
             </View>
           </View>
           <View style={styles.separator}></View>
@@ -78,26 +70,27 @@ const WalletAddNewScreen = () => {
               <Text>Address</Text>
             </View>
             <View>
-              <Text>
-                0XCc54..64654f
-              </Text>
+              <Text>0XCc54..64654f</Text>
             </View>
           </View>
-
         </View>
         <View style={styles.terms}>
-            <Text>By clicking connect you allow this app to view your public address. By connecting a wallet, you agree to Terms & Conditions. </Text>
+          <Text>
+            By clicking connect you allow this app to view your public address.
+            By connecting a wallet, you agree to Terms & Conditions.{" "}
+          </Text>
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.connectBtn}>
             <Button>Connect</Button>
           </View>
           <View style={styles.cancelBtn}>
-            <Button backgroundColor='#F1F1F1' color='#000'>Cancel</Button>
+            <Button backgroundColor="#F1F1F1" color="#000">
+              Cancel
+            </Button>
           </View>
         </View>
       </View>
-
     </ScrollView>;
 };
 
@@ -277,7 +270,9 @@ const Button = props => {
     }]}>
         <Text style={[btnStyles.text, {
         color: props.color ? props.color : "#ffffff"
-      }]}>{props.children}</Text>
+      }]}>
+          {props.children}
+        </Text>
       </View>
     </Pressable>;
 };
