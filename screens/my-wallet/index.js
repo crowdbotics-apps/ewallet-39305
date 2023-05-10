@@ -1,29 +1,36 @@
+import { api_v1_wallet_list } from "../../store/ewalletAPI/wallets.slice.js";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import React from "react";
 import { Image, View, Text, StyleSheet, ScrollView } from "react-native";
 
 const MyWalletsScreen = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(api_v1_wallet_list({}));
+  }, []);
   return <ScrollView>
       <View style={styles.container}>
-      <View style={styles.top}>
-        <View style={[styles.account]}>
-          <Image source={require("./assets/edit.png")} />
-        </View>
-        <View style={[styles.pt10, styles.balance]}>
-          <View>
-            <Text style={styles.balanceText}>$1244.84</Text>
-            <Text style={styles.balanceTxt}>Balance</Text>
+        <View style={styles.top}>
+          <View style={[styles.account]}>
+            <Image source={require("./assets/edit.png")} />
+          </View>
+          <View style={[styles.pt10, styles.balance]}>
+            <View>
+              <Text style={styles.balanceText}>$1244.84</Text>
+              <Text style={styles.balanceTxt}>Balance</Text>
+            </View>
           </View>
         </View>
-      </View>
-      <Text>Wallets</Text>
-      <View style={styles.tabView}>
-        <View style={[styles.tabItem, styles.selectedTab]}>
-          <Text>Send</Text>
+        <Text>Wallets</Text>
+        <View style={styles.tabView}>
+          <View style={[styles.tabItem, styles.selectedTab]}>
+            <Text>Send</Text>
+          </View>
+          <View style={styles.tabItem}>
+            <Text>Receive</Text>
+          </View>
         </View>
-        <View style={styles.tabItem}>
-          <Text>Receive</Text>
-        </View>
-      </View>
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.walletHead}>
