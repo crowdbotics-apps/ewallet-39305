@@ -1,10 +1,13 @@
+import { useSelector } from "react-redux";
 import { api_v1_wallet_list } from "../../store/ewalletAPI/wallets.slice.js";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import React from "react";
 import { Image, View, Text, StyleSheet, ScrollView } from "react-native";
 
 const MyWalletsScreen = () => {
+  const {
+    entities: Wallets
+  } = useSelector(state => state.Wallets);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(api_v1_wallet_list({}));
@@ -41,7 +44,7 @@ const MyWalletsScreen = () => {
           <View style={styles.infoContainer}>
             <Image source={require("./assets/Icon.png")} />
             <View style={styles.textContainer}>
-              <Text>Ethereum</Text>
+              <Text>{Wallets?.[0]?.wallet_name}</Text>
               <Text style={styles.t12}>ETH</Text>
             </View>
           </View>
@@ -87,9 +90,6 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10
   },
-  flexOne: {
-    flex: 1
-  },
   top: {
     display: "flex",
     flexDirection: "row",
@@ -106,9 +106,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center"
   },
-  accountText: {
-    width: 115
-  },
   pt10: {
     paddingVertical: 10
   },
@@ -116,14 +113,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     marginTop: 15
-  },
-  switched: {
-    marginTop: 25,
-    width: 120
-  },
-  getAccount: {
-    marginRight: 5,
-    marginTop: 4
   },
   balanceText: {
     fontSize: 20,
@@ -135,17 +124,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     textAlign: "right",
     fontWeight: "bold"
-  },
-  walletBalance: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 28,
-    marginTop: 14,
-    paddingHorizontal: 23
-  },
-  walletText: {
-    fontSize: 16
   },
   tabView: {
     width: "50%",
