@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Mybalance
+from home.models import Mybalance,Payment
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -80,4 +80,10 @@ class MybalanceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Mybalance
+        fields = "__all__"
+
+class PaymentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Payment
         fields = "__all__"

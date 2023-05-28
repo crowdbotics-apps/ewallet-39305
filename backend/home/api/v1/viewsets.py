@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Mybalance
-from .serializers import MybalanceSerializer
+from home.models import Mybalance,Payment
+from .serializers import MybalanceSerializer,PaymentSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class MybalanceViewSet(viewsets.ModelViewSet):
     serializer_class = MybalanceSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Mybalance.objects.all()
+
+class PaymentViewSet(viewsets.ModelViewSet):
+    serializer_class = PaymentSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Payment.objects.all()
