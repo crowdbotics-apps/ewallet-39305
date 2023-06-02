@@ -35,8 +35,8 @@ const walletHomeScreen = () => {
             <View style={styles.border}></View>
             <View>
               <Pressable onPress={() => {
-              navigation.navigate("walletAddNew");
-            }}><Text style={styles.heading}>Add Wallet</Text></Pressable>
+              navigation.navigate("ScreenAI9");
+            }}><Text style={styles.heading}>{"Transaction history"}</Text></Pressable>
               
             </View>
             <View style={styles.border}></View>
@@ -220,12 +220,6 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 14,
     color: "#26292A",
-    fontWeight: "500",
-    textAlign: "center"
-  },
-  subHeading: {
-    fontSize: 16,
-    color: "#12D790",
     fontWeight: "500",
     textAlign: "center"
   },

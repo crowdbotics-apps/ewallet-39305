@@ -1,86 +1,120 @@
-import axios from "axios"
+import axios from "axios";
 const ewalletAPI = axios.create({
   baseURL: "https://ewallet-39305.botics.co",
-  headers: { Accept: "application/json", "Content-Type": "application/json" }
-})
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+  }
+});
+
 function api_v1_login_create(payload) {
-  return ewalletAPI.post(`/api/v1/login/`, payload.data)
+  return ewalletAPI.post(`/api/v1/login/`, payload.data);
 }
+
 function api_v1_signup_create(payload) {
-  return ewalletAPI.post(`/api/v1/signup/`, payload.data)
+  return ewalletAPI.post(`/api/v1/signup/`, payload.data);
 }
+
 function api_v1_wallet_list(payload) {
-  return ewalletAPI.get(`/api/v1/wallet/`)
+  return ewalletAPI.get(`/api/v1/wallet/`);
 }
+
 function api_v1_wallet_create(payload) {
-  return ewalletAPI.post(`/api/v1/wallet/`, payload.data)
+  return ewalletAPI.post(`/api/v1/wallet/`, payload.data);
 }
+
 function rest_auth_user_retrieve(payload) {
-  return ewalletAPI.get(`/rest-auth/user/`)
+  return ewalletAPI.get(`/rest-auth/user/`);
 }
+
 function rest_auth_user_update(payload) {
-  return ewalletAPI.put(`/rest-auth/user/`, payload.data)
+  return ewalletAPI.put(`/rest-auth/user/`, payload.data);
 }
+
 function rest_auth_user_partial_update(payload) {
-  return ewalletAPI.patch(`/rest-auth/user/`, payload.data)
+  return ewalletAPI.patch(`/rest-auth/user/`, payload.data);
 }
+
 function api_docs_schema_retrieve(payload) {
-  return ewalletAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
+  return ewalletAPI.get(`/api-docs/schema/`, {
+    params: {
+      lang: payload.lang
+    }
+  });
 }
+
 function rest_auth_login_create(payload) {
-  return ewalletAPI.post(`/rest-auth/login/`, payload.data)
+  return ewalletAPI.post(`/rest-auth/login/`, payload.data);
 }
+
 function api_v1_mybalance_list(payload) {
-  return ewalletAPI.get(`/api/v1/mybalance/`)
+  return ewalletAPI.get(`/api/v1/mybalance/`);
 }
+
 function api_v1_mybalance_create(payload) {
-  return ewalletAPI.post(`/api/v1/mybalance/`, payload.data)
+  return ewalletAPI.post(`/api/v1/mybalance/`, payload.data);
 }
+
 function rest_auth_logout_retrieve(payload) {
-  return ewalletAPI.get(`/rest-auth/logout/`)
+  return ewalletAPI.get(`/rest-auth/logout/`);
 }
+
 function rest_auth_logout_create(payload) {
-  return ewalletAPI.post(`/rest-auth/logout/`)
+  return ewalletAPI.post(`/rest-auth/logout/`);
 }
+
 function api_v1_wallet_retrieve(payload) {
-  return ewalletAPI.get(`/api/v1/wallet/${payload.id}/`)
+  return ewalletAPI.get(`/api/v1/wallet/${payload.id}/`);
 }
+
 function api_v1_wallet_update(payload) {
-  return ewalletAPI.put(`/api/v1/wallet/${payload.id}/`, payload.data)
+  return ewalletAPI.put(`/api/v1/wallet/${payload.id}/`, payload.data);
 }
+
 function api_v1_wallet_partial_update(payload) {
-  return ewalletAPI.patch(`/api/v1/wallet/${payload.id}/`, payload.data)
+  return ewalletAPI.patch(`/api/v1/wallet/${payload.id}/`, payload.data);
 }
+
 function api_v1_wallet_destroy(payload) {
-  return ewalletAPI.delete(`/api/v1/wallet/${payload.id}/`)
+  return ewalletAPI.delete(`/api/v1/wallet/${payload.id}/`);
 }
+
 function api_v1_mybalance_retrieve(payload) {
-  return ewalletAPI.get(`/api/v1/mybalance/${payload.id}/`)
+  return ewalletAPI.get(`/api/v1/mybalance/${payload.id}/`);
 }
+
 function api_v1_mybalance_update(payload) {
-  return ewalletAPI.put(`/api/v1/mybalance/${payload.id}/`, payload.data)
+  return ewalletAPI.put(`/api/v1/mybalance/${payload.id}/`, payload.data);
 }
+
 function api_v1_mybalance_partial_update(payload) {
-  return ewalletAPI.patch(`/api/v1/mybalance/${payload.id}/`, payload.data)
+  return ewalletAPI.patch(`/api/v1/mybalance/${payload.id}/`, payload.data);
 }
+
 function api_v1_mybalance_destroy(payload) {
-  return ewalletAPI.delete(`/api/v1/mybalance/${payload.id}/`)
+  return ewalletAPI.delete(`/api/v1/mybalance/${payload.id}/`);
 }
+
 function rest_auth_registration_create(payload) {
-  return ewalletAPI.post(`/rest-auth/registration/`, payload.data)
+  return ewalletAPI.post(`/rest-auth/registration/`, payload.data);
 }
+
 function rest_auth_password_reset_create(payload) {
-  return ewalletAPI.post(`/rest-auth/password/reset/`, payload.data)
+  return ewalletAPI.post(`/rest-auth/password/reset/`, payload.data);
 }
+
 function rest_auth_password_change_create(payload) {
-  return ewalletAPI.post(`/rest-auth/password/change/`, payload.data)
+  return ewalletAPI.post(`/rest-auth/password/change/`, payload.data);
 }
+
 function rest_auth_password_reset_confirm_create(payload) {
-  return ewalletAPI.post(`/rest-auth/password/reset/confirm/`, payload.data)
+  return ewalletAPI.post(`/rest-auth/password/reset/confirm/`, payload.data);
 }
+
 function rest_auth_registration_verify_email_create(payload) {
-  return ewalletAPI.post(`/rest-auth/registration/verify-email/`, payload.data)
+  return ewalletAPI.post(`/rest-auth/registration/verify-email/`, payload.data);
 }
+
 export const apiService = {
   api_v1_login_create,
   api_v1_signup_create,
@@ -108,4 +142,4 @@ export const apiService = {
   rest_auth_password_change_create,
   rest_auth_password_reset_confirm_create,
   rest_auth_registration_verify_email_create
-}
+};
