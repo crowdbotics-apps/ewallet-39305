@@ -11,3 +11,7 @@ class Payment(models.Model):
     amount = models.DecimalField(max_digits=10,decimal_places=2,)
     currency = models.CharField(max_length=3,)
     date = models.DateTimeField(auto_now_add=True,)
+class Notification(models.Model):
+    'Generated Model'
+    title = models.CharField(max_length=100,)
+    message = models.TextField()

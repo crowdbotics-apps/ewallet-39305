@@ -1,4 +1,4 @@
-from .models import Mybalance
+from .models import Payment, Mybalance
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
 

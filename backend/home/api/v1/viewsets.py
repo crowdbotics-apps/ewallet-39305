@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Mybalance,Payment
-from .serializers import MybalanceSerializer,PaymentSerializer
+from home.models import Mybalance,Notification,Payment
+from .serializers import MybalanceSerializer,NotificationSerializer,PaymentSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -42,3 +42,8 @@ class PaymentViewSet(viewsets.ModelViewSet):
     serializer_class = PaymentSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Payment.objects.all()
+
+class NotificationViewSet(viewsets.ModelViewSet):
+    serializer_class = NotificationSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Notification.objects.all()
